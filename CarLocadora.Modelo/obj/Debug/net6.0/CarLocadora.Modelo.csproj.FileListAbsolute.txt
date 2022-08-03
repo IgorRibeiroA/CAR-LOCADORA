@@ -1,0 +1,12 @@
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\bin\Debug\net6.0\CarLocadora.Modelo.deps.json
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\bin\Debug\net6.0\CarLocadora.Modelo.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\bin\Debug\net6.0\CarLocadora.Modelo.pdb
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\CarLocadora.Modelo.csproj.AssemblyReference.cache
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\CarLocadora.Modelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\CarLocadora.Modelo.AssemblyInfoInputs.cache
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\CarLocadora.Modelo.AssemblyInfo.cs
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\CarLocadora.Modelo.csproj.CoreCompileInputs.cache
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\CarLocadora.Modelo.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\refint\CarLocadora.Modelo.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\CarLocadora.Modelo.pdb
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Modelo\obj\Debug\net6.0\ref\CarLocadora.Modelo.dll

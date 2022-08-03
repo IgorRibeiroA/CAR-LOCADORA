@@ -1,0 +1,12 @@
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Negocio.deps.json
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Negocio.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Negocio.pdb
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.csproj.AssemblyReference.cache
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.AssemblyInfoInputs.cache
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.AssemblyInfo.cs
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\refint\CarLocadora.Negocio.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.pdb
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.Negocio\obj\Debug\net6.0\ref\CarLocadora.Negocio.dll

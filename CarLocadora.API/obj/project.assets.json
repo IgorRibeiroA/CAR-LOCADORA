@@ -72,6 +72,26 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "CarLocadora.Modelo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CarLocadora.Modelo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarLocadora.Modelo.dll": {}
+        }
+      },
+      "CarLocadora.Negocio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CarLocadora.Negocio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarLocadora.Negocio.dll": {}
+        }
       }
     }
   },
@@ -200,10 +220,22 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "CarLocadora.Modelo/1.0.0": {
+      "type": "project",
+      "path": "../CarLocadora.Modelo/CarLocadora.Modelo.csproj",
+      "msbuildProject": "../CarLocadora.Modelo/CarLocadora.Modelo.csproj"
+    },
+    "CarLocadora.Negocio/1.0.0": {
+      "type": "project",
+      "path": "../CarLocadora.Negocio/CarLocadora.Negocio.csproj",
+      "msbuildProject": "../CarLocadora.Negocio/CarLocadora.Negocio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CarLocadora.Modelo >= 1.0.0",
+      "CarLocadora.Negocio >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -240,7 +272,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\igoro\\OneDrive\\Área de Trabalho\\Repositorio\\CAR-LOCADORA\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj": {
+              "projectPath": "C:\\Users\\igoro\\OneDrive\\Área de Trabalho\\Repositorio\\CAR-LOCADORA\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj"
+            },
+            "C:\\Users\\igoro\\OneDrive\\Área de Trabalho\\Repositorio\\CAR-LOCADORA\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj": {
+              "projectPath": "C:\\Users\\igoro\\OneDrive\\Área de Trabalho\\Repositorio\\CAR-LOCADORA\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
