@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarLocadora.Modelo
 {
-    internal class Endereco
+    public class Endereco
     {
         [Required(ErrorMessage = "O campo Logradouro é obrigatório.")]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "Este campo deve ter no maximo 50 caracteres")]
