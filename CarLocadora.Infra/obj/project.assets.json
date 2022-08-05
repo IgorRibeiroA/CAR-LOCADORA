@@ -634,6 +634,16 @@
             "rid": "win"
           }
         }
+      },
+      "CarLocadora.Modelo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CarLocadora.Modelo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarLocadora.Modelo.dll": {}
+        }
       }
     }
   },
@@ -1854,10 +1864,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CarLocadora.Modelo/1.0.0": {
+      "type": "project",
+      "path": "../CarLocadora.Modelo/CarLocadora.Modelo.csproj",
+      "msbuildProject": "../CarLocadora.Modelo/CarLocadora.Modelo.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CarLocadora.Modelo >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.7"
     ]
@@ -1895,7 +1911,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\igoro\\OneDrive\\Área de Trabalho\\Repositorio\\CAR-LOCADORA\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj": {
+              "projectPath": "C:\\Users\\igoro\\OneDrive\\Área de Trabalho\\Repositorio\\CAR-LOCADORA\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
