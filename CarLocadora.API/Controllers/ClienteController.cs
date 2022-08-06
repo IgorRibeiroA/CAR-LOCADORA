@@ -1,23 +1,44 @@
 ﻿using CarLocadora.Modelo;
-using Microsoft.AspNetCore.Http;
+using CarLocadora.Infra;
 using Microsoft.AspNetCore.Mvc;
-
+using CarLocadora.Negocio.ClienteNegocio;
 namespace CarLocadora.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        [HttpGet()]
-        public List<Cliente> Get()
-        {
-            List<Cliente> list = new List<Cliente>();
-            Cliente cliente = new();
-            cliente.Nome = "Igor Ribeiro";
-            cliente.CNH = "156549889999";
+        private readonly IClienteNegocio _cliente;
 
-            list.Add(cliente);
-            return list;
+
+        public ClienteController(IClienteNegocio cliente)
+        {
+            _cliente = cliente;
         }
+
+        [HttpGet()]
+        public async Task<List<Cliente>> Get()
+        {
+            var clientes = _cliente.ObterLista();
+
+            return clientes;
+        }
+    
+        [HttpGet("ObterUmCliente")]
+        public Cliente Get([FromQuery] string cpf)
+        {
+            return _cliente.ObterUmCliente(cpf);
+        }
+
+        [HttpPost()]
+        public void Post([FromBody] Cliente cliente)
+        {
+            _cliente.Incluir(cliente);
+        }
+        [HttpPut()]
+        public void Put([FromBody] Cliente cliente)
+        {
+            _cliente.Alterar(cliente);
+        } 
     }
 }

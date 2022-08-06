@@ -14,7 +14,7 @@ namespace CarLocadora.Modelo
         public string Logradouro { get; set; }
 
         [Required(ErrorMessage = "O campo Logradouro é obrigatório.")]
-        [StringLength(20, MinimumLength = 5, ErrorMessage = "Este campo deve ter no maximo 50 caracteres")]
+        [StringLength(20, ErrorMessage = "Este campo deve ter no maximo 20 caracteres")]
         public string Numero { get; set; }
 
         [StringLength(50, ErrorMessage = "Este campo deve conter no maximo 50 caractéres")]

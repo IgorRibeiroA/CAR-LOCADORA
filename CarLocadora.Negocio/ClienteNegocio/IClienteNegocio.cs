@@ -9,7 +9,10 @@ namespace CarLocadora.Negocio.ClienteNegocio
     public interface IClienteNegocio
     {
         List<Cliente> ObterLista();
+        Cliente ObterUmCliente(string cpf);
 
         void Incluir(Cliente cliente);
+
+        void Alterar(Cliente cliente);
     }
 }

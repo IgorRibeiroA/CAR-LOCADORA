@@ -17,6 +17,7 @@ namespace CarLocadora.Infra
         
         public DbSet<Cliente> Clientes { get; set; }
 
+     
     }
 
 }

@@ -17,15 +17,26 @@ namespace CarLocadora.Negocio.ClienteNegocio
             _context = context;
         }
 
+        public void Alterar(Cliente cliente)
+        {
+            _context.Clientes.Update(cliente);
+            _context.SaveChanges();
+        }
 
         public void Incluir(Cliente cliente)
         {
-            throw new NotImplementedException();
+            _context.Clientes.Add(cliente);
+            _context.SaveChanges();
         }
 
         public List<Cliente> ObterLista()
         {
-            throw new NotImplementedException();
+            return _context.Clientes.ToList();
+        }
+
+        public Cliente ObterUmCliente(string cpf)
+        {
+            return _context.Clientes.Single(x => x.CPF == cpf);
         }
     }
 }
