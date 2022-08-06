@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarLocadora.Modelo
 {
-    internal class Usuario : Endereco
+    public class Usuario : Endereco
     {
         [Key]
         [Required(ErrorMessage = "O campo CPF é obrigatório.")]

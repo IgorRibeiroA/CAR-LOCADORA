@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarLocadora.Modelo
 {
-    internal class Categoria
+    public class Categoria
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

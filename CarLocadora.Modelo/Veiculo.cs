@@ -3,7 +3,7 @@
 
 namespace CarLocadora.Modelo
 {
-    internal class Veiculo
+    public class Veiculo
     {
         [Key]
         [Required(ErrorMessage = "O campo Placa é obrigatório.")]

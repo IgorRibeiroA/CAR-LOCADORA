@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarLocadora.Modelo
 {
-    internal class FormaPagamento
+    public class FormaPagamento
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
