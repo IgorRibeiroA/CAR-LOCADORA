@@ -33,7 +33,7 @@ namespace CarLocadora.Negocio.UsuarioNegocio
             return _context.Usuarios.ToList();
         }
 
-        public Usuario ObterUmCliente(string cpf)
+        public Usuario ObterUmUsuario(string cpf)
         {
             return _context.Usuarios.Single(x => x.CPF == cpf);
         }

@@ -10,7 +10,7 @@ namespace CarLocadora.Negocio.UsuarioNegocio
     public interface IUsuarioNegocio
     {
         List<Usuario> ObterLista();
-        Usuario ObterUmCliente(string cpf);
+        Usuario ObterUmUsuario(string cpf);
 
         void Incluir(Usuario usuario);
 
