@@ -128,10 +128,10 @@ namespace CarLocadora.Controllers
                     }
                     else
                     {
-                        throw new Exception("Deu Zica!");
+                        throw new Exception("Aconteceu Algo errado!");
                     }
 
-                    //return RedirectToAction(nameof(Index), new { mensagem = "Resgisto editado!", sucesso = true });
+            
 
                 }
                 else
