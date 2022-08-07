@@ -35,7 +35,7 @@ namespace CarLocadora.Negocio.VeiculoNegocio
             return _context.Veiculos.ToList();
         }
 
-        public Veiculo ObterUmCliente(string placa)
+        public Veiculo ObterUmVeiculo(string placa)
         {
             return _context.Veiculos.Single(x => x.Placa == placa);
         }

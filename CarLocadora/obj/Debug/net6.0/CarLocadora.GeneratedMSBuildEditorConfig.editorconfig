@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Cliente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Cliente/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
