@@ -33,12 +33,14 @@ namespace CarLocadora.API.Controllers
         [HttpPost()]
         public void Post([FromBody] Categoria categoria)
         {
+            categoria.DataInclusao = DateTime.Now;
             _categoria.Incluir(categoria);
         }
 
         [HttpPut()]
         public void Put([FromBody] Categoria categoria)
         {
+            categoria.DataAlteracao = DateTime.Now;
             _categoria.Alterar(categoria);
         }
 

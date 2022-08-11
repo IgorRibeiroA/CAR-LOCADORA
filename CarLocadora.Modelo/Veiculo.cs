@@ -35,7 +35,7 @@ namespace CarLocadora.Modelo
         public bool Ativo { get; set; }
 
         [Display(Name = "Data Inclusão")]
-        public DateTime DataInclusao { get; set; }
+        public DateTime? DataInclusao { get; set; }
 
         [Display(Name = "Data Alteração")]
         public DateTime? DataAlteracao { get; set; }

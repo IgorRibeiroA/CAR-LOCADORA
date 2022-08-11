@@ -27,17 +27,20 @@ namespace CarLocadora.API.Controllers
         [HttpGet("ObterUmCliente")]
         public Cliente Get([FromQuery] string cpf)
         {
+
             return _cliente.ObterUmCliente(cpf);
         }
 
         [HttpPost()]
         public void Post([FromBody] Cliente cliente)
         {
+            cliente.DataInclusao = DateTime.Now;
             _cliente.Incluir(cliente);
         }
         [HttpPut()]
         public void Put([FromBody] Cliente cliente)
         {
+            cliente.DataAlteracao = DateTime.Now;
             _cliente.Alterar(cliente);
         } 
     }

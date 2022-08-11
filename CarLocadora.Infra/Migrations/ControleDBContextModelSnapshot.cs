@@ -36,7 +36,7 @@ namespace CarLocadora.Infra.Migrations
                     b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInclusao")
+                    b.Property<DateTime?>("DataInclusao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
@@ -83,7 +83,7 @@ namespace CarLocadora.Infra.Migrations
                     b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInclusao")
+                    b.Property<DateTime?>("DataInclusao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataNascimento")
@@ -132,7 +132,7 @@ namespace CarLocadora.Infra.Migrations
                     b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInclusao")
+                    b.Property<DateTime?>("DataInclusao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
@@ -171,7 +171,7 @@ namespace CarLocadora.Infra.Migrations
                     b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInclusao")
+                    b.Property<DateTime?>("DataInclusao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataNascimento")
@@ -241,7 +241,7 @@ namespace CarLocadora.Infra.Migrations
                     b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInclusao")
+                    b.Property<DateTime?>("DataInclusao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Marca")

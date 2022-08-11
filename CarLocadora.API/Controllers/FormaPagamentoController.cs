@@ -9,37 +9,39 @@ namespace CarLocadora.API.Controllers
     [ApiController]
     public class FormaPagamentoController : ControllerBase
     {
-        private readonly IFormaPagamentoNegocio _FP;
+        private readonly IFormaPagamentoNegocio _FormaPagamento;
 
 
-        public FormaPagamentoController(IFormaPagamentoNegocio fp)
+        public FormaPagamentoController(IFormaPagamentoNegocio formapagamento)
         {
-            _FP = fp;
+            _FormaPagamento = formapagamento;
         }
 
         [HttpGet()]
         public async Task<List<FormaPagamento>> Get()
         {
-            var fps = _FP.ObterLista();
+            var formapagamentos = _FormaPagamento.ObterLista();
 
-            return fps;
+            return formapagamentos;
         }
 
         [HttpGet("ObterUmaFormaPagamento")]
         public FormaPagamento Get([FromQuery] int id)
         {
-            return _FP.ObterFormaPagamento(id);
+            return _FormaPagamento.ObterFormaPagamento(id);
         }
 
         [HttpPost()]
         public void Post([FromBody] FormaPagamento formaPagamento)
         {
-            _FP.Incluir(formaPagamento);
+            formaPagamento.DataInclusao = DateTime.Now;
+            _FormaPagamento.Incluir(formaPagamento);
         }
         [HttpPut()]
         public void Put([FromBody] FormaPagamento formaPagamento)
         {
-            _FP.Alterar(formaPagamento);
+            formaPagamento.DataAlteracao = DateTime.Now;
+            _FormaPagamento.Alterar(formaPagamento);
         }
 
     }

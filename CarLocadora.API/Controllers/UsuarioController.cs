@@ -34,11 +34,13 @@ namespace CarLocadora.API.Controllers
         [HttpPost()]
         public void Post([FromBody] Usuario usuario)
         {
+            usuario.DataInclusao = DateTime.Now;
             _usuario.Incluir(usuario);
         }
         [HttpPut()]
         public void Put([FromBody] Usuario usuario)
         {
+            usuario.DataAlteracao = DateTime.Now;
             _usuario.Alterar(usuario);
         }
     }

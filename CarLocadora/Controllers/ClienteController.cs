@@ -67,7 +67,7 @@ namespace CarLocadora.Controllers
                     if (response.IsSuccessStatusCode)
                     {
                         return RedirectToAction(nameof(Index), new { mensagem = "resgisto incluido!", sucesso = true } );
-                    }
+                    } 
                     else
                     {
                         throw new Exception("Falha Sistêmica");
