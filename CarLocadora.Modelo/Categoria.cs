@@ -19,7 +19,7 @@ namespace CarLocadora.Modelo
         [Display(Name = "Descrição")]
         public string Descricao { get; set; }
 
-        [Required(ErrorMessage = "O campo Descrição é obrigatório")]
+        [Required(ErrorMessage = "O campo Valor da Diária é obrigatório")]
         [Display(Name = "Valor da Diária")]
         public decimal ValorDiaria { get; set; }
 

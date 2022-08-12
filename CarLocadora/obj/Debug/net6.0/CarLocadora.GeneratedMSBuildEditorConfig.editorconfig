@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Categoria/_Formulario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXF9Gb3JtdWxhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Cliente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -53,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/FormaPagamento/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybWFQYWdhbWVudG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/FormaPagamento/_Formulario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybWFQYWdhbWVudG9cX0Zvcm11bGFyaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Home/Index.cshtml]
@@ -83,6 +91,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Usuario/_Formulario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xfRm9ybXVsYXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Veiculo/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -95,8 +107,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/_Formulario.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX0Zvcm11bGFyaW8uY3NodG1s
+[C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/Veiculo/_Formulario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb1xfRm9ybXVsYXJpby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/igoro/OneDrive/Área de Trabalho/Repositorio/CAR-LOCADORA/CarLocadora/Views/_ViewImports.cshtml]
