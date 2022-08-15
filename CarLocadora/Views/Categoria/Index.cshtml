@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.DataAlteracao)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id=item.Id })  
+                @Html.ActionLink("Editar", "Edit", new { id=item.Id }, new {@class = "btn btn-outline-warning text-decoration-none"})  
 @*                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
-                @Html.ActionLink("Deletar", "Delete", new { id=item.Id })
+                @Html.ActionLink("Deletar", "Delete", new { id=item.Id }, new {@class = "btn btn-outline-danger text-decoration-none"})
             </td>
         </tr>
 }

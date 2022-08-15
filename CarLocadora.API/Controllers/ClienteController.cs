@@ -2,10 +2,13 @@
 using CarLocadora.Infra;
 using Microsoft.AspNetCore.Mvc;
 using CarLocadora.Negocio.ClienteNegocio;
+using Microsoft.AspNetCore.Authorization;
+
 namespace CarLocadora.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         private readonly IClienteNegocio _cliente;

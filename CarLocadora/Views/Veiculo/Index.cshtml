@@ -79,7 +79,7 @@
                 @Html.DisplayFor(modelItem => item.DataAlteracao)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { valor=item.Placa }) 
+                @Html.ActionLink("Editar", "Edit", new { valor=item.Placa }, new {@class = "btn btn-outline-warning text-decoration-none"})
 @*                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td>

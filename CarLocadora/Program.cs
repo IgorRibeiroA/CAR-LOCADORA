@@ -1,8 +1,10 @@
 using CarLocadora.Modelo;
+using CarLocadora.Modelo.ModelsToken;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<DadosBase>(builder.Configuration.GetSection("DadosBase"));
+builder.Services.AddSingleton<LoginRespostaModel>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

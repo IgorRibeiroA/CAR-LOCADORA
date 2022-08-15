@@ -65,3 +65,8 @@ C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.A
 C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Infra.pdb
 C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\AspNetCoreRateLimit.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\igoro\OneDrive\Área de Trabalho\Repositorio\CAR-LOCADORA\CarLocadora.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
