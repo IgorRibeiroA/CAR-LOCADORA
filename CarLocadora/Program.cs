@@ -1,8 +1,10 @@
 using CarLocadora.Modelo;
 using CarLocadora.Modelo.ModelsToken;
+using CarLocadora.Servico;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IApiToken, ApiToken>();
 builder.Services.Configure<DadosBase>(builder.Configuration.GetSection("DadosBase"));
 builder.Services.AddSingleton<LoginRespostaModel>();
 

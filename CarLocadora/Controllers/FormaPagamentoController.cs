@@ -15,20 +15,20 @@ namespace CarLocadora.Controllers
         private string mensagem = "";
 
         private readonly IOptions<DadosBase> _dadosBase;
-        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
-        public FormaPagamentoController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel)
+        private readonly IApiToken _apiToken;
+        public FormaPagamentoController(IOptions<DadosBase> dadosBase, IApiToken apiToken)
         {
             _dadosBase = dadosBase;
-            _loginRespostaModel = loginRespostaModel;
+            _apiToken = apiToken;
         }
+
         // GET: FormaPagamentoController
         public ActionResult Index()
         {
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-            new ApiToken(_dadosBase, _loginRespostaModel).Obter());
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormaPagamento").Result;
 
@@ -67,8 +67,7 @@ namespace CarLocadora.Controllers
                     HttpClient client = new HttpClient();
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                    new ApiToken(_dadosBase, _loginRespostaModel).Obter());
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
                     HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}FormaPagamento", forma).Result;
 
@@ -100,8 +99,7 @@ namespace CarLocadora.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-            new ApiToken(_dadosBase, _loginRespostaModel).Obter());
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormaPagamento/ObterUmaFormaPagamento?id={id}").Result;
 
@@ -129,8 +127,7 @@ namespace CarLocadora.Controllers
                     HttpClient client = new HttpClient();
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                    new ApiToken(_dadosBase, _loginRespostaModel).Obter());
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
                     HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}FormaPagamento", formaPagamento).Result;
 

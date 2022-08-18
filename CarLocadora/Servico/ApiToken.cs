@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 
 namespace CarLocadora.Servico
 {
-    public class ApiToken
+    public class ApiToken : IApiToken
     {
   
             private readonly IOptions<DadosBase> _dadosBase;
@@ -66,5 +66,6 @@ namespace CarLocadora.Servico
 
                 return _loginRespostaModel.Value.Token;
             }
+
     }
 }

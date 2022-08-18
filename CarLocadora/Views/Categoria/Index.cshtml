@@ -94,10 +94,10 @@
       var button = event.relatedTarget
 
       var id = button.getAttribute('data-bs-id')
-      var categoria = button.getAttribute('data-bs-categoria')
+      var descricao = button.getAttribute('data-bs-descricao')
 
       var modalBodyDiv = exampleModal.querySelector('.modal-body div')
-      modalBodyDiv.innerHTML = "Você confirma a exclusão de <b>" + categoria + "?</b>"
+      modalBodyDiv.innerHTML = "Você confirma a exclusão de <b>" + descricao + "?</b>"
         + "<br />Não será possivel resgatar esta categoria após a confirmação!";
 
       var modalFooterLink = exampleModal.querySelector('.modal-footer a')
