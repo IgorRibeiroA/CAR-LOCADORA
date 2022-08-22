@@ -37,15 +37,15 @@ namespace CarLocadora.API.Controllers
         [HttpPost()]
         public void Post([FromBody] Cliente cliente)
         {
-            cliente.DataInclusao = DateTime.Now;
-            cliente.DataAlteracao = null;
+            //cliente.DataInclusao = DateTime.Now;
+            //cliente.DataAlteracao = null;
             _cliente.Incluir(cliente);
         }
         [HttpPut()]
         public void Put([FromBody] Cliente cliente)
         {
-            cliente.DataAlteracao = DateTime.Now;
-            cliente.DataInclusao = null;
+            //cliente.DataAlteracao = DateTime.Now;
+            //cliente.DataInclusao = null;
             _cliente.Alterar(cliente);
         } 
     }

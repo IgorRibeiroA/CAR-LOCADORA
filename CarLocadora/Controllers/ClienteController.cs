@@ -63,6 +63,7 @@ namespace CarLocadora.Controllers
         {
             try
             {
+                cliente.DataInclusao = DateTime.Now;
                 if (ModelState.IsValid)
                 {
                     HttpClient client = new HttpClient();
@@ -122,6 +123,7 @@ namespace CarLocadora.Controllers
         {
             try
             {
+                cliente.DataAlteracao = DateTime.Now;
 
                 if (ModelState.IsValid) 
                 {

@@ -11,6 +11,13 @@
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Edit">
+            <label asp-for="DataInclusao" class="control-label"></label>
+            <input asp-for="DataInclusao" class="form-control" readonly />
+            <span asp-validation-for="DataInclusao" class="text-danger"></span>
+
+            <label asp-for="DataAlteracao" class="control-label"></label>
+            <input asp-for="DataAlteracao" class="form-control " readonly />
+            <span asp-validation-for="DataAlteracao" class="text-danger"></span>
             <partial name= "_Formulario"/>
         </form>
     </div>
