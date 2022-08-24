@@ -76,7 +76,7 @@
             <input asp-for="DataAlteracao" class="form-control" readonly />
             <span asp-validation-for="DataAlteracao" class="text-danger"></span>
         </div>
-        <br/>
+        <br />
     </div>
 </div>
 <div class="row">
@@ -88,5 +88,14 @@
     <div class="col-md-2">
         <div class="form-group">
             <a class="btn btn-outline-primary text-white text-decoration-none" asp-action="Index">Voltar para lista</a>
+        </div>
+    </div>
+
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label asp-for="CategoriaId" class="control-label"></label>
+            <select asp-for="CategoriaId" asp-items="ViewBag.CategoriasDeVeiculos" class="form-control text-uppercase">
+            </select>
         </div>
     </div>

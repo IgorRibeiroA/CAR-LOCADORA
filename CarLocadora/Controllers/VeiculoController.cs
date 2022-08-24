@@ -3,6 +3,7 @@ using CarLocadora.Modelo.ModelsToken;
 using CarLocadora.Servico;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -50,6 +51,7 @@ namespace CarLocadora.Controllers
         // GET: VeiculoController/Create
         public ActionResult Create()
         {
+            ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
             return View();
         }
 
@@ -94,6 +96,8 @@ namespace CarLocadora.Controllers
         // GET: VeiculoController/Edit/5
         public ActionResult Edit(string valor)
         {
+
+
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -103,6 +107,8 @@ namespace CarLocadora.Controllers
 
             if (response.IsSuccessStatusCode)
             {
+                ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
+
                 string conteudo = response.Content.ReadAsStringAsync().Result;
                 return View(JsonConvert.DeserializeObject<Veiculo>(conteudo));
             }
@@ -172,6 +178,40 @@ namespace CarLocadora.Controllers
             }
         }
 
+
+        private List<SelectListItem> CarregarCategoriasDeVeiculos()
+        {
+            List<SelectListItem> lista = new List<SelectListItem>();
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",  _apiToken.Obter());
+
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                string conteudo = response.Content.ReadAsStringAsync().Result;
+                List<Categoria> categorias = JsonConvert.DeserializeObject<List<Categoria>>(conteudo);
+
+                foreach (var linha in categorias)
+                {
+                    lista.Add(new SelectListItem()
+                    {
+                        Value = linha.Id.ToString(),
+                        Text = linha.Descricao,
+                        Selected = false,
+                    });
+                }
+
+                return lista;
+            }
+            else
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
 
     }
 }

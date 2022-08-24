@@ -145,6 +145,45 @@ namespace CarLocadora.Infra.Migrations
                     b.ToTable("FormaPagamentos");
                 });
 
+            modelBuilder.Entity("CarLocadora.Modelo.ManutencaoVeiculo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("DataAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataInclusao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataServico")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<int>("Garantia")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorServico")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("VeiculoPlaca")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(8)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VeiculoPlaca");
+
+                    b.ToTable("ManutencaoVeiculos");
+                });
+
             modelBuilder.Entity("CarLocadora.Modelo.Usuario", b =>
                 {
                     b.Property<string>("CPF")
@@ -224,6 +263,9 @@ namespace CarLocadora.Infra.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("CategoriaId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Chassi")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -260,7 +302,29 @@ namespace CarLocadora.Infra.Migrations
 
                     b.HasKey("Placa");
 
+                    b.HasIndex("CategoriaId");
+
                     b.ToTable("Veiculos");
+                });
+
+            modelBuilder.Entity("CarLocadora.Modelo.ManutencaoVeiculo", b =>
+                {
+                    b.HasOne("CarLocadora.Modelo.Veiculo", "Veiculo")
+                        .WithMany()
+                        .HasForeignKey("VeiculoPlaca")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Veiculo");
+                });
+
+            modelBuilder.Entity("CarLocadora.Modelo.Veiculo", b =>
+                {
+                    b.HasOne("CarLocadora.Modelo.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId");
+
+                    b.Navigation("Categoria");
                 });
 #pragma warning restore 612, 618
         }
