@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<CarLocadora.Modelo.ManutencaoVeiculo>
 
+@{
+    ViewData["Title"] = "Manutenção Veículo";
+}
+
+<h1>Manutenção Veículo</h1>
+
 <p>
-    <a asp-action="Create">Adicionar</a>
+    <a class="btn btn-outline-primary text-white text-decoration-none" asp-action="Create">Adicionar</a>
 </p>
 <table class="table">
     <thead>
