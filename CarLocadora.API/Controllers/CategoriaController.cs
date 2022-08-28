@@ -25,6 +25,8 @@ namespace CarLocadora.API.Controllers
 
             return categorias;
         }
+
+
         [HttpGet("ObterUmaCategoria")]
         public Categoria Get([FromQuery] int id)
         {

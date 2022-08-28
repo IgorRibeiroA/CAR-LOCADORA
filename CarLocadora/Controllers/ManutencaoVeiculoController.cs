@@ -19,16 +19,50 @@ namespace CarLocadora.Controllers
             _apiToken = apiToken;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+
         public async Task<IActionResult> Create()
         {
 
             ViewBag.Veiculos = await CarregarVeiculos();
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([FromForm] ManutencaoVeiculo manutencaoVeiculo)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    HttpClient client = new HttpClient();
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                    _apiToken.Obter());
+                    HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}ManutencaoVeiculo", manutencaoVeiculo).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction(nameof(Index), new { mensagem = "resgisto incluido!", sucesso = true });
+                    }
+                    else
+                    {
+                        throw new Exception("Falha Sistêmica");
+                    }
+                }
+                else
+                {
+                    TempData["erro"] = "Algum campo pode está incorreto";
+                    return View();
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["erro"] = "algum erro aconteceu - " + ex.Message;
+                return View();
+            }
+        }
+
         private async Task<List<SelectListItem>> CarregarVeiculos()
         {
             List<SelectListItem> lista = new List<SelectListItem>();
@@ -62,5 +96,105 @@ namespace CarLocadora.Controllers
                 throw new Exception(response.ReasonPhrase);
             }
         }
+
+        public ActionResult Index()
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
+
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}ManutencaoVeiculo").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                string conteudo = response.Content.ReadAsStringAsync().Result;
+                return View(JsonConvert.DeserializeObject<List<ManutencaoVeiculo>>(conteudo));
+            }
+            else
+            {
+                throw new Exception("Falha sistêmica");
+            }
+        }
+
+        public ActionResult Edit(int id)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+            _apiToken.Obter());
+
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}ManutencaoVeiculo/ObterUmaManutencaoVeiculo?id={id}").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                string conteudo = response.Content.ReadAsStringAsync().Result;
+                return View(JsonConvert.DeserializeObject<ManutencaoVeiculo>(conteudo));
+            }
+            else
+            {
+                throw new Exception("Falha Sistêmica!");
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([FromForm] ManutencaoVeiculo manutencaoVeiculo)
+        {
+            try
+            {
+
+                if (ModelState.IsValid)
+                {
+                    HttpClient client = new HttpClient();
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                    _apiToken.Obter());
+
+                    HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}ManutencaoVeiculo", manutencaoVeiculo).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction(nameof(Index), new { mensagem = "Registro Alterado!", sucesso = true });
+                    }
+                    else
+                    {
+                        throw new Exception("Aconteceu Algo errado!");
+                    }
+                }
+                else
+                {
+                    TempData["erro"] = "Algum campo não foi preenchimento!";
+                    return View();
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["erro"] = "Algum erro aconteceu - " + ex.Message;
+                return View();
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+            _apiToken.Obter());
+
+            HttpResponseMessage response = client.DeleteAsync($"{_dadosBase.Value.API_URL_BASE}ManutencaoVeiculo?id={id}").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index), new { mensagem = "Registro excluído!", sucesso = true });
+            }
+            else
+            {
+                throw new Exception("Falha Sistemica");
+            }
+        }
+
     }
 }

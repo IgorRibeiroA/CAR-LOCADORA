@@ -1,0 +1,113 @@
+﻿@model IEnumerable<CarLocadora.Modelo.ManutencaoVeiculo>
+
+<p>
+    <a asp-action="Create">Adicionar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataServico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Garantia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorServico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAlteracao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VeiculoPlaca)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garantia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAlteracao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VeiculoPlaca)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.Id  }, new {@class = "btn btn-outline-warning text-decoration-none"})
+                <a class = "btn btn-outline-danger text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="@item.Id" data-bs-veiculoPlaca="@item.VeiculoPlaca">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir Registro de Manutenção</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div id="divModelTexto" class="mb-3">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        @Html.ActionLink("Excluir", "Delete", null, htmlAttributes: new { @class = "btn btn-primary"})
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+@section scripts {
+<script type="text/javascript">
+
+            var exampleModal = document.getElementById('exampleModal')
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget
+
+      var id = button.getAttribute('data-bs-id')
+      var veiculoPlaca = button.getAttribute('data-bs-veiculoPlaca')
+
+      var modalBodyDiv = exampleModal.querySelector('.modal-body div')
+      modalBodyDiv.innerHTML = "Você confirma a exclusão do registro de manutenção do veiculo <b>" + veiculoPlaca + "?</b>"
+        + "<br />Não será possivel resgatar esta categoria após a confirmação!";
+
+      var modalFooterLink = exampleModal.querySelector('.modal-footer a')
+      modalFooterLink.href = "/ManutencaoVeiculo/Delete?id=" + id;
+
+
+    })
+</script>
+}

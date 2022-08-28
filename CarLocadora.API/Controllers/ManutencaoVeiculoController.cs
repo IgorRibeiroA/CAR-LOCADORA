@@ -1,83 +1,57 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CarLocadora.Modelo;
+using CarLocadora.Negocio.ManutencaoVeiculoNegocio;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarLocadora.API.Controllers
 {
-    public class ManutencaoVeiculoController : Controller
+
+    [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
+    public class ManutencaoVeiculoController : ControllerBase
     {
-        // GET: ManutencaoVeiculoController
-        public ActionResult Index()
+        private readonly IManutencaoVeiculoNegocio _manutencaoVeiculo;
+
+        public ManutencaoVeiculoController(IManutencaoVeiculoNegocio manutencaoVeiculo)
         {
-            return View();
+            _manutencaoVeiculo = manutencaoVeiculo;
         }
 
-        // GET: ManutencaoVeiculoController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet()]
+        public async Task<List<ManutencaoVeiculo>> Get()
         {
-            return View();
+            var manutencao = _manutencaoVeiculo.ObterLista();
+
+            return manutencao;
         }
 
-        // GET: ManutencaoVeiculoController/Create
-        public ActionResult Create()
+        [HttpGet("ObterUmaManutencaoVeiculo")]
+        public ManutencaoVeiculo Get([FromQuery] int id)
         {
-            return View();
+            return _manutencaoVeiculo.ObterUmaManutencaoVeiculo(id);
         }
 
-        // POST: ManutencaoVeiculoController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [HttpPost()]
+        public void Post([FromBody] ManutencaoVeiculo manutencaoVeiculo)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            manutencaoVeiculo.DataInclusao = DateTime.Now;
+            _manutencaoVeiculo.Incluir(manutencaoVeiculo);
         }
 
-        // GET: ManutencaoVeiculoController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpPut()]
+        public void Put([FromBody] ManutencaoVeiculo manutencaoVeiculo)
         {
-            return View();
+            manutencaoVeiculo.DataAlteracao = DateTime.Now;
+            _manutencaoVeiculo.Alterar(manutencaoVeiculo);
         }
 
-        // POST: ManutencaoVeiculoController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [HttpDelete]
+        public void Delete([FromQuery] int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _manutencaoVeiculo.Excluir(id);
         }
 
-        // GET: ManutencaoVeiculoController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ManutencaoVeiculoController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
