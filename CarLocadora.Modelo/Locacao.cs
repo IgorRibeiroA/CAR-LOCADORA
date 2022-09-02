@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarLocadora.Modelo
 {
-    public class Locacoes
+    public class Locacao
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,13 +18,17 @@ namespace CarLocadora.Modelo
         [Required(ErrorMessage = "O campo CPF é obrigatório.")]
         [StringLength(14, MinimumLength = 14, ErrorMessage = "Este campo deve ter 14 caracteres")]
         [Display(Name = "CPF do Clinte")]
-        public Cliente ClienteCPF { get; set;}
+        public string ClienteCPF { get; set; }
+        public Cliente? Cliente { get; set; }
 
         [Required(ErrorMessage = "O campo Forma Pagamento é obrigatório.")]
-        public FormaPagamento FormaPagamentoId { get; set; }
+        public int FormaPagamentoId { get; set; }
+        public FormaPagamento? FormaPagamento { get; set; }
 
-        [Required(ErrorMessage = "O campo Categoria é obrigatório.")]
-        public Categoria CategoriaId { get; set; }
+        //[Required(ErrorMessage = "O campo Categoria é obrigatório.")]
+        //public int CategoriaId { get; set; }
+        //public Categoria? Categoria { get; set; }
+
 
         [Required(ErrorMessage = "O campo Data da reserva é obrigatório.")]
         [Display(Name = " Data da reserva")]
@@ -39,13 +43,13 @@ namespace CarLocadora.Modelo
         public DateTime DataHoraDevolucaoPrevista { get; set; }
 
         [StringLength(8, MinimumLength = 8, ErrorMessage = "Este campo deve ter 8 caracteres")]
-        public Veiculo? VeiculoPlava { get; set; }
+        public string VeiculoPlaca { get; set; }
+        public Veiculo? Veiculo { get; set; }
 
         [Display(Name = "Data Inclusão")]
         public DateTime? DataInclusao { get; set; }
 
         [Display(Name = "Data Alteração")]
         public DateTime? DataAlteracao { get; set; }
-
     }
 }

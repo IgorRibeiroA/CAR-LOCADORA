@@ -21,6 +21,9 @@ namespace CarLocadora.Infra
         public DbSet<FormaPagamento> FormaPagamentos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<ManutencaoVeiculo> ManutencaoVeiculos { get; set; }
+        public DbSet<Vistoria> Vistorias { get; set; }
+        public DbSet<Locacao> Locacoes { get; set; }
+
 
     }
 

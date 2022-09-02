@@ -78,7 +78,15 @@
         </div>
         <br />
     </div>
+        <div class="col-sm-4">
+        <div class="form-group">
+            <label asp-for="CategoriaId" class="control-label"></label>
+            <select asp-for="CategoriaId" asp-items="ViewBag.CategoriasDeVeiculos" class="form-control text-uppercase">
+            </select>
+        </div>
+    </div>
 </div>
+
 <div class="row">
     <div class="col-md-1">
         <div class="form-group">
@@ -92,10 +100,4 @@
     </div>
 
 
-    <div class="col-sm-4">
-        <div class="form-group">
-            <label asp-for="CategoriaId" class="control-label"></label>
-            <select asp-for="CategoriaId" asp-items="ViewBag.CategoriasDeVeiculos" class="form-control text-uppercase">
-            </select>
-        </div>
-    </div>
+

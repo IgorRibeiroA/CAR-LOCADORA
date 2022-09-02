@@ -16,7 +16,9 @@ namespace CarLocadora.Modelo
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo Locação é obrigatorio")]
-        public Locacoes LocacoesId { get; set; }
+        public int LocacaoId { get; set; }
+        public Locacao? Locacao { get; set; }
+        
 
         [Required(ErrorMessage = "O campo KM Saida é obrigatorio")]
         [Display(Name = "KM de saida")]

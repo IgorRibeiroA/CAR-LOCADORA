@@ -40,7 +40,7 @@ namespace CarLocadora.Modelo
         [Display(Name = "Data Alteração")]
         public DateTime? DataAlteracao { get; set; }
 
-
+        [Display(Name = "Categoria")]
         public int? CategoriaId { get; set; }
         public Categoria? Categoria { get; set; }
     }
